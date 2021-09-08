@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+/*Inputs and Outputs*/
+.input-container, .output{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 25rem;
+  padding: 1rem 2rem;
+}
+.output span{
+  margin: 15px 0 5px 0;
+}
+
+.input-container input{
+  padding: 5px 10px;
+  border-radius: 8px;
+  border-style: none none groove none;
+  outline-style: none;
+}
+
+
+.input-container button{
+  margin-top: 10px;
+  border-radius: 6px;
+  border-style: none;
+  background: #e83867;
+  color: white;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+}
+
+.input-container button:hover{
+  background: white;
+  color: #e83867;
+}
+/*Carrossel*/
+.carrossel{
+  max-width: 1200px;
+  max-height: 450px;
+  padding: 3rem;
+}
+
+.carrossel-controler{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-controler .container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carrossel-controler .item{
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 32px;
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.carrossel-controler .item img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+.item.item-focused{
+  z-index: 9999 !important;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) !important;
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 32px;
+}
+
+.item.item.item-focused .shadow{
+  background: rgba(0, 0, 0, 0) linear-gradient(rgba(0, 0, 0, 0) 47.95%, rgba(0, 0, 0, 0.75) 100%) repeat scroll 0% 0%;
+}
+
+.item-info{
+  margin: 0px;
+  min-width: 0px;
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  left: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.item-info p{
+  margin: 0px;
+  min-width: 0px;
+  font-size: 20px;
+  color: rgb(234, 236, 239);
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+.item-info span{
+  min-width: 0px;
+  font-size: 12px;
+  color: rgb(234, 236, 239);
+  line-height: 20px;
+}
+
+.item .shadow{
+  border-radius: 6px;
+  margin: 0px;
+  min-width: 0px;
+  position: absolute;
+  z-index: 1;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0) linear-gradient(rgba(255, 255, 255, 0.16) 47.95%, rgba(255, 255, 255, 0.5) 100%) repeat scroll 0% 0%;
+}
+
+.item.smallest-left{
+  transform: translate3d(54.9305px, 0px, 0px) scale3d(0.8, 0.8, 1);
+}
+.item.smallest-right{
+  transform: translate3d(-54.9305px, 0px, 0px) scale3d(0.8, 0.8, 1);
+}
